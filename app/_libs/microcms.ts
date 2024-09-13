@@ -1,6 +1,6 @@
-export type Category{
-  name:string;
-}
+export type Category = {
+  name: string;
+};
 
 type News = {
   id: String;
@@ -11,4 +11,3 @@ type News = {
   publiishedAt: String;
   createdAt: String;
 };
-
