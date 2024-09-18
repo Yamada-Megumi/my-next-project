@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./index.module.css";
 import Category from "../Category";
 import Date from "../Date";
-import { news } from "@/app/_libs/microcms";
+import { News } from "@/app/_libs/microcms";
 
 type Props = {
   news: News[];
@@ -40,7 +40,7 @@ export default function NewsList({ news }: Props) {
               <dt className={styles.newsItemTitle}>{article.title}</dt>
               <dd className={styles.meta}>
                 <Category category={article.category} />
-                <Date date={article.publishedAt ?? article.createAt} />
+                <Date date={article.publishedAt ?? article.createdAt} />
               </dd>
             </dl>
           </Link>

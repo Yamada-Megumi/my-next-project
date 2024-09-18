@@ -22,7 +22,7 @@ export default async function Page() {
               />
               <dl>
                 <dt className={styles.name}>{member.name}</dt>
-                <dt className={styles.positon}>{member.positon}</dt>
+                <dt className={styles.position}>{member.position}</dt>
                 <dt className={styles.profile}>{member.profile}</dt>
               </dl>
             </li>
