@@ -8,6 +8,11 @@
   gap: 48px;
   margin-bottom: 80px;
 }
+.list .image {
+  /* 処理なしだが追加 */
+  width: 240px;
+  height: auto;
+}
 
 .list:nth-child(even) {
   flex-direction: row-reverse;

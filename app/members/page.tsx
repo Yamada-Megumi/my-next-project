@@ -1,48 +1,10 @@
 import Image from "next/image";
+import { getMembersList } from "@/app/_libs/microcms"; // import getMembersList from "../_libs/microcms";
+import { MEMBERS_LIST_LIMIT } from "@/app/_constants";
 import styles from "./page.module.css";
 
-const data = {
-  contents: [
-    {
-      id: "1",
-      image: {
-        url: "/img-member1.jpg",
-        width: 240,
-        height: 240,
-      },
-      name: "デビット・チャン",
-      positon: "CEO",
-      profile:
-        "あああ　あああああああ、あああああああああああ。あああああああああああああああああああ、あああああああああああああああああああ、あまたはあ。",
-    },
-    {
-      id: "2",
-      image: {
-        url: "/img-member2.jpg",
-        width: 240,
-        height: 240,
-      },
-      name: "エミリー・サンダース",
-      positon: "CTO",
-      profile:
-        "あああ　あああああああ、あああああああああああ。あああああああああああああああああああ、あああああああああああああああああああ、あまたはあ。",
-    },
-    {
-      id: "3",
-      image: {
-        url: "/img-member3.jpg",
-        width: 240,
-        height: 240,
-      },
-      name: "ジョン・ウィルソン",
-      positon: "CFO",
-      profile:
-        "あああ　あああああああ、あああああああああああ。あああああああああああああああああああ、あああああああああああああああああああ、あまたはあ。",
-    },
-  ],
-};
-
-export default function Page() {
+export default async function Page() {
+  const data = await getMembersList({ limit: MEMBERS_LIST_LIMIT });
   return (
     <div className={styles.container}>
       {data.contents.length === 0 ? (
@@ -56,6 +18,7 @@ export default function Page() {
                 alt=""
                 width={member.image.width}
                 height={member.image.height}
+                className={styles.image}
               />
               <dl>
                 <dt className={styles.name}>{member.name}</dt>
